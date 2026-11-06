@@ -18,8 +18,6 @@ Explain through practical scenarios and before/after comparisons, with short abs
 
 Don't use subagents unless explicitly told to by the user or by a skill.
 
-When a background command or delegated task you started finishes, report its result in that turn.
-
 # Tests
 
 Add tests to the project's suite only after all changes are considered completed, tests are the last step. Fix existing tests that your change breaks.
