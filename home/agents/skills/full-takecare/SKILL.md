@@ -7,7 +7,7 @@ Take the user's task from its current state to an open PR ready for the user to 
 
 ## Authorization and scope
 
-An explicit request authorizes completing the change, running the checks and browser or runtime verification it needs, committing, pushing, creating or updating the PR, rebasing, fixing conflicts, and using `--force-with-lease` on this task's branch after a rebase. Follow project verification commands and fixtures. Add tests to the project's suite only when the user asks for them; temporary checks stay outside the repository.
+An explicit request authorizes completing the change, running the checks and browser or runtime verification it needs, committing, pushing, creating or updating the PR, rebasing, fixing conflicts, and using `--force-with-lease` on this task's branch after a rebase. Follow project verification commands and fixtures. Temporary checks stay outside the repository.
 
 Never merge, enable auto-merge, enter a merge queue, push to the default branch, bypass branch protection, or delegate those actions. This workflow ends with the merge left to the user.
 
