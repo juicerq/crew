@@ -1,0 +1,5 @@
+interface:
+  display_name: "Massive Clean Code"
+  short_description: "Sweep a codebase for unreadable code and clean it"
+policy:
+  allow_implicit_invocation: false

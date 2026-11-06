@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 6 100 90" width="256" height="230">
+  <style>
+    .ink { fill: #111111; }
+    @media (prefers-color-scheme: dark) { .ink { fill: #f2f2f2; } }
+  </style>
+  <defs>
+    <g id="front-gap">
+      <rect x="26" y="48" width="48" height="46" rx="15"/>
+      <rect x="44.5" y="36" width="11" height="18" rx="5.5"/>
+      <circle cx="50" cy="42" r="7.5"/>
+    </g>
+    <mask id="back">
+      <rect width="100" height="100" fill="#fff"/>
+      <g fill="#000">
+        <use href="#front-gap"/>
+        <rect x="2" y="36" width="40" height="34" rx="12"/>
+        <rect x="58" y="36" width="40" height="34" rx="12"/>
+        <rect x="40" y="26" width="5" height="7" rx="2.5"/>
+        <rect x="55" y="26" width="5" height="7" rx="2.5"/>
+      </g>
+    </mask>
+    <mask id="sides">
+      <rect width="100" height="100" fill="#fff"/>
+      <g fill="#000">
+        <use href="#front-gap"/>
+        <rect x="12" y="48" width="5" height="8" rx="2.5"/>
+        <rect x="25" y="48" width="5" height="8" rx="2.5"/>
+        <rect x="70" y="48" width="5" height="8" rx="2.5"/>
+        <rect x="83" y="48" width="5" height="8" rx="2.5"/>
+      </g>
+    </mask>
+    <mask id="front">
+      <rect width="100" height="100" fill="#fff"/>
+      <rect x="39" y="64" width="7" height="11" rx="3.5" fill="#000"/>
+      <rect x="54" y="64" width="7" height="11" rx="3.5" fill="#000"/>
+    </mask>
+  </defs>
+  <g class="ink" mask="url(#back)">
+    <rect x="34" y="21" width="32" height="27" rx="8"/>
+    <rect x="48.5" y="14" width="3" height="8"/>
+    <circle cx="50" cy="12" r="3"/>
+  </g>
+  <g class="ink" mask="url(#sides)">
+    <rect x="6" y="40" width="32" height="26" rx="8"/>
+    <rect x="62" y="40" width="32" height="26" rx="8"/>
+    <rect x="20.5" y="32" width="3" height="9"/>
+    <circle cx="22" cy="30" r="3.3"/>
+    <rect x="76.5" y="32" width="3" height="9"/>
+    <circle cx="78" cy="30" r="3.3"/>
+  </g>
+  <g class="ink">
+    <rect x="30" y="52" width="40" height="38" rx="11" mask="url(#front)"/>
+    <rect x="48" y="44" width="4" height="9"/>
+    <circle cx="50" cy="42" r="4.3"/>
+  </g>
+</svg>

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Full Yolo"
+  short_description: "Take over the task through to a merged PR"
+  default_prompt: "Use $full-yolo to take this over and merge the PR once it is ready."

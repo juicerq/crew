@@ -1,0 +1,198 @@
+{
+  "fileSuggestion": {
+    "type": "command",
+    "command": "~/.claude/hooks/file_suggestion.sh"
+  },
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "CLAUDE_CODE_NEW_INIT": "1",
+    "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "433000",
+    "CLAUDE_CODE_EVEN_MORE_DANGEROUSLY_SKIP_PERMISSIONS": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(bun --version)"
+    ],
+    "deny": [
+      "AskUserQuestion",
+      "CronCreate",
+      "CronDelete",
+      "CronList",
+      "NotebookEdit",
+      "EnterPlanMode",
+      "ExitPlanMode",
+      "RemoteTrigger"
+    ],
+    "defaultMode": "auto"
+  },
+  "model": "opus",
+  "disableClaudeAiConnectors": true,
+  "skillOverrides": {
+    "code-review": "off",
+    "verify": "off",
+    "dataviz": "off",
+    "simplify": "off",
+    "artifact-design": "off",
+    "keybindings-help": "off",
+    "fewer-permission-prompts": "off",
+    "claude-api": "off",
+    "run": "off",
+    "init": "off",
+    "security-review": "off",
+    "agent-browser": "on",
+    "domain-modeling": "on",
+    "frontend-design": "on",
+    "improve-codebase-architecture": "on",
+    "marketplace-docs": "on",
+    "prototype": "on",
+    "retro": "on",
+    "show-me": "on",
+    "sol-loop": "on",
+    "teach": "on",
+    "writing-for-agents": "on",
+    "anthropic-skills:built-in-browser": "off",
+    "anthropic-skills:chrome-browser": "off",
+    "anthropic-skills:computer-use": "off",
+    "anthropic-skills:docs": "off",
+    "anthropic-skills:frontend-design": "off",
+    "anthropic-skills:google-workspace": "off",
+    "anthropic-skills:import-memory": "off",
+    "anthropic-skills:morning": "off",
+    "anthropic-skills:skill-creator": "off",
+    "anthropic-skills:deep-research": "name-only",
+    "anthropic-skills:docx": "name-only",
+    "anthropic-skills:pdf": "name-only",
+    "anthropic-skills:pptx": "name-only",
+    "anthropic-skills:xlsx": "name-only",
+    "bro": "on",
+    "create-verification-skill": "on",
+    "maintain-verification-skill": "on",
+    "massive-clean-code": "on",
+    "pr": "on",
+    "full-takecare": "on",
+    "full-yolo": "on"
+  },
+  "disableBundledSkills": true,
+  "hooks": {
+    "WorktreeCreate": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/worktree_create.sh"
+          }
+        ]
+      }
+    ],
+    "WorktreeRemove": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/worktree_remove.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "curl -sS --max-time 0.2 -X POST --data-binary @- http://127.0.0.1:47820/hooks || true"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "curl -sS --max-time 0.2 -X POST --data-binary @- http://127.0.0.1:47820/hooks || true"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "curl -sS --max-time 0.2 -X POST --data-binary @- http://127.0.0.1:47820/hooks || true"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "curl -sS --max-time 0.2 -X POST --data-binary @- http://127.0.0.1:47820/hooks || true"
+          }
+        ]
+      }
+    ]
+  },
+  "disableRemoteControl": true,
+  "disableArtifact": true,
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline-command.sh",
+    "refreshInterval": 1
+  },
+  "subagentStatusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "context7@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true
+  },
+  "outputStyle": "Plain",
+  "language": "Portuguese",
+  "feedbackDrafts": "off",
+  "alwaysThinkingEnabled": true,
+  "effortLevel": "medium",
+  "modelSettings": {
+    "claude-fable-5": {
+      "effortLevel": "high"
+    },
+    "claude-opus-5": {
+      "effortLevel": "high"
+    },
+    "claude-fable-5-1": {
+      "effortLevel": "medium"
+    },
+    "claude-opus-4-8": {
+      "effortLevel": "xhigh"
+    },
+    "claude-sonnet-5": {
+      "effortLevel": "medium"
+    },
+    "claude-opus-5-5": {
+      "effortLevel": "high"
+    },
+    "claude-sonnet-5-5": {
+      "effortLevel": "xhigh"
+    }
+  },
+  "promptSuggestionEnabled": false,
+  "awaySummaryEnabled": false,
+  "autoUpdatesChannel": "stable",
+  "minimumVersion": "2.1.37",
+  "tui": "fullscreen",
+  "autoMemoryEnabled": false,
+  "autoDreamEnabled": false,
+  "skipDangerousModePermissionPrompt": true,
+  "skipWorkflowUsageWarning": true,
+  "theme": "custom:active",
+  "verbose": false,
+  "switchModelsOnFlag": true,
+  "terminalProgressBarEnabled": true,
+  "teammateMode": "in-process",
+  "skipAutoPermissionPrompt": true,
+  "voiceEnabled": true
+}

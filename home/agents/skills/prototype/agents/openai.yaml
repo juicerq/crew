@@ -1,0 +1,5 @@
+interface:
+  display_name: "Prototype"
+  short_description: "Explore a decision with a runnable experiment"
+policy:
+  allow_implicit_invocation: false

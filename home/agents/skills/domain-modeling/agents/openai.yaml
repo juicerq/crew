@@ -1,0 +1,3 @@
+interface:
+  display_name: "Domain Modeling"
+  short_description: "Resolve product terms, boundaries, and allowed states"

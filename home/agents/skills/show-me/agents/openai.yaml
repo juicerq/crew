@@ -1,0 +1,5 @@
+interface:
+  display_name: "Show Me"
+  short_description: "Show a topic or completed changes visually"
+policy:
+  allow_implicit_invocation: false

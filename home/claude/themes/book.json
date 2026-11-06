@@ -1,0 +1,7 @@
+{
+  "name": "Book",
+  "base": "light",
+  "overrides": {
+    "userMessageBackground": "#c9bf9b"
+  }
+}

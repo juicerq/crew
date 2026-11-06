@@ -1,0 +1,4 @@
+interface:
+  display_name: "Full Takecare"
+  short_description: "Take over the task until a complete PR is ready for your merge"
+  default_prompt: "Use $full-takecare to take this over until the PR is ready for me to merge."

@@ -1,0 +1,8 @@
+{
+  "name": "Clay",
+  "base": "dark",
+  "overrides": {
+    "claude": "#d97757",
+    "userMessageBackground": "#33312e"
+  }
+}
