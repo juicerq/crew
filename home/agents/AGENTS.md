@@ -1,10 +1,24 @@
-# Subagents
+# Language
 
-Don't use subagents unless explicitly told to.
+Write every message to me in PT-BR, including progress notes and replies after a context compaction, whose summary is in English.
+
+# Decisions
+
+Before you build a job, cache, table, retry layer, or abstraction, compare it with an option that changes less or removes code, using measured facts of this case. A Sol approval does not settle this: Sol reviews the diff, not whether it should exist.
+
+In a final report, name the weakest part of the result before I ask.
 
 # Explanations
 
-Explain through practical scenarios and before/after comparisons. Trace the flow of data through the relevant parts to show how things work.
+When I ask what you recommend, compare the options in the scenarios that separate them, pick one, and say why the others lose.
+
+Explain through practical scenarios and before/after comparisons, with short abstract pseudo-code when code changed. Trace the flow of data through the relevant parts to show how things work.
+
+# Subagents
+
+Don't use subagents unless explicitly told to by the user or by a skill.
+
+When a background command or delegated task you started finishes, report its result in that turn.
 
 # Tests
 
