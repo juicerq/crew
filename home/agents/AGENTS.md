@@ -38,6 +38,6 @@ Let git supply the author: commit without `-c user.name` or `-c user.email`, so 
 
 # Shell
 
-The Bash tool runs zsh, whatever the environment header says. Write bash syntax. zsh does not split an unquoted variable into words, so pass several arguments as an array (`"${args[@]}"`) or write them out.
+In zsh, an unquoted variable is not split into words, so pass several arguments as an array (`"${args[@]}"`) or write them out.
 
 For checks piped through output filters, use `bash -o pipefail` and preserve its exit code. Read the full log before reporting success.
