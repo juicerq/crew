@@ -2,21 +2,9 @@
 
 Write every message to me in PT-BR, including progress notes and replies after a context compaction, whose summary is in English.
 
-# Decisions
-
-Before you build a job, cache, table, retry layer, or abstraction, compare it with an option that changes less or removes code, using measured facts of this case. A Sol approval does not settle this: Sol reviews the diff, not whether it should exist.
-
-In a final report, name the weakest part of the result before I ask.
-
 # Explanations
 
-When I ask what you recommend, compare the options in the scenarios that separate them, pick one, and say why the others lose.
-
-Explain through practical scenarios. Trace the flow of data through the relevant parts to show how things work.
-
-When you propose or make a code change, read the code first, then show the affected flow as one short pseudo-code block in `diff`: steps named in the domain's words, no types, imports, or error handling. Prefix new lines with `+`, removed lines with `-`, and unchanged lines with a space. Comment a line only to say what a failure there does. The rule against comments covers files, not these blocks.
-
-Follow the block with one concrete case run through the flow, preferring a case where a step fails: who acts, what each step does, and what the user sees.
+Explain how things work by running one concrete case through the flow, preferring one where a step fails: who acts, what each step does, and what the user sees. For a code change, run the same case before and after. Never write prose steps as a `diff` block.
 
 # Subagents
 
