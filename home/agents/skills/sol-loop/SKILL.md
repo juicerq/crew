@@ -8,21 +8,22 @@ description: Review completed code changes or a pull request with Sol in a bound
 This is a T3 Code workflow for making your code changes more correct before
 (or sometimes after) filing a pull request. Use OpenAI's GPT Sol to review
 your code in a loop. Each round runs two Sol reviewers in parallel: the
-correctness reviewer looks for bugs and regressions, and the quality reviewer
-judges conventions, overengineering, and cost that grows with volume.
+correctness reviewer looks for bugs, regressions, and a design that invites
+them, and the quality reviewer judges conventions, overengineering, and cost
+that grows with volume.
 
 Make the most minimal possible changes to appease the Sol reviewers. Be careful
 of scope creep and don't be scared to push back.
 
 ## Budget
 
-- Default: 3 rounds total. Round 1 is full. Later rounds check only
-  changed code and open findings.
+- Default: 3 rounds total. Round 1 is full and finds everything it can.
+  Later rounds check only changed code and open findings.
 - Extend to 5 only for security, permissions, auth, data loss, or
   state/concurrency, while a blocker or should stays open with evidence. Or when
   the user asks.
-- Stop early if a round returns only nits. Declined nits and comment,
-  doc, or format-only fixes need no new round.
+- Stop early if a round returns only nits or follow-ups. Declined nits,
+  follow-ups, and comment, doc, or format-only fixes need no new round.
 - Two reviewers per round, correctness and quality. Neither may start
   subagents or more reviewers.
 - Keep one ledger for both: id, reviewer, severity, outcome, usage if
@@ -92,9 +93,15 @@ Correctness brief, after the header:
 
 ```
 Read surrounding code. Find bugs, regressions, broken callers, mismatch with intent.
+Before the line-level review, question the design against the intent: is there an
+approach that changes less or removes code, a mechanism the library or repo already
+provides, logic placed in the wrong layer, or a state or ownership model that invites
+bugs? Name the alternative and where it lives.
 A separate reviewer judges conventions and overengineering. Skip style unless it
 hides a bug. Other paths, rare cases, small perf, extra compat: nits.
-blocker = intended case wrong. should = real bug callers will hit, in intent. nit = rest.
+blocker = intended case wrong. should = real bug callers will hit, in intent, or a
+design whose alternative exists and the current one fails or costs more in a case
+you show. nit = rest, including design preference.
 Report problems, not fixes. The author decides what to change.
 Reply:
 VERDICT: APPROVE or CHANGES
@@ -107,6 +114,9 @@ Quality brief, after the header:
 Judge how the code is written. A separate reviewer hunts bugs; name one you
 notice in a single line and move on.
 Read and apply <abs path to the repo's code-practices/SKILL.md>, when it exists, and the repo's AGENTS.md.
+Go through every changed file and apply each check below to it. Report every
+finding, not only the main ones: later rounds do not reopen code that did not
+change, so what you miss now stays.
 Search the repo for helpers, types, or modules the change reimplements.
 Flag code, tests, or guards the intent does not need, such as an abstraction
 with one use or an option no caller passes. Flag leftovers: unused exports, names a rename left
@@ -128,18 +138,26 @@ Report problems, not fixes. The author decides what to change.
 Reply:
 VERDICT: APPROVE or CHANGES
 Q1 [should|nit] <file>:<line> <problem>. Evidence: <what already exists, what is guaranteed, or what it costs> (stable ids)
+Checked: <every changed file>
 ```
 
 ## 3. Answer findings
 
 Check each finding and severity yourself. Another path, rare case, or
-small cost is a nit, whatever label it came with.
+small cost is a nit, whatever label it came with. Check that `Checked:`
+lists every changed file; ask the quality reviewer again for any it skipped.
 
 - Agree: smallest fix. Prefer delete or narrow over new lock, cache,
   helper, or option. Fix the case that happened. Add one focused test
   that fails without the fix only if intent needs it.
 - Disagree: say why, with evidence (file:line, test, output).
 - Out of scope or nit: decline in one line. List as follow-up.
+- Follow-up from a later round: fix it now when the fix is comment, doc,
+  format, rename, or deletion only; otherwise list it. Either way it opens
+  no round.
+
+A design finding the author accepts can replace part of the change. Make
+that rewrite before the line-level fixes it would discard.
 
 When the two reviewers conflict, such as a guard that quality calls
 unneeded and correctness calls required, decide by observed behavior and
@@ -154,11 +172,15 @@ Start one only if budget remains and a blocker or should is open, behavior code
 changed, or approval does not cover the current behavior diff. Run both
 reviewers, even one with no open ids, because a fix for one reviewer's finding
 can create a finding for the other. Use a fresh `delegate_task` for each. Send each its round 1 brief,
-the whole ledger (`fixed:` / `disagree:` / `declined:` + evidence), the same
-base diff, and the change since last round. Tell correctness: its open ids
-and changed code only. Tell quality: review the whole base diff fresh, because
-a fix can leave a wrapper or check that is no longer needed, and do not
-re-raise declined ids. Each marks its old ids `resolved` or
+the whole ledger (`fixed:` / `disagree:` / `declined:` / `follow-up:` + evidence), the same
+base diff, and the change since last round.
+
+Tell correctness: its open ids and changed code only, with no design
+questions on code that did not change. Tell quality: read the whole base
+diff for context, but raise new findings only on code changed since last
+round and on leftovers a fix created, such as a wrapper or check no longer
+needed. A new finding on unchanged code is labeled `follow-up` unless it is
+a bug. Do not re-raise declined ids. Each marks its old ids `resolved` or
 `still open: <reason>`.
 
 Keep later briefs neutral. Send the diff and ledger, not your case for the
@@ -185,11 +207,12 @@ after the loop ends, such as a follow-up request, a fix after approval, or a
 rebase conflict, review the change since approval in a new loop with both
 reviewers before the next push or merge. Send each its round 1 brief, the
 previous ledger, and the change since approval, scoped and worded as in step 4,
+except that correctness questions the design of the change since approval,
 then update the review line
 to the total rounds. If the user asks to push or merge without that review,
 remove `Sol verdict: approved` from the PR body and tell the user which
 change the approval does not cover.
 
 Report: rounds, model, what each reviewer changed, diff size before/after,
-fixed and declined findings with reasons, usage if exposed (else say not),
-pushed or not.
+fixed, declined, and follow-up findings with reasons, usage if exposed
+(else say not), pushed or not.
