@@ -20,8 +20,19 @@ Pass `timeoutMs: 5000` to `preview_act` and at most `10000` to `preview_wait_for
 After a timeout, inspect before retrying; never repeat the call with a longer timeout. Take a snapshot and act on what it shows:
 
 - The element is missing, hidden, or covered: target a ref from the new snapshot, or close what covers it.
-- A loader, blank area, or framework error stays after one `preview_navigate` reload: the app is failing. Investigate it through the project's verification skill instead of waiting.
+- A loader or overlay stays over content that the snapshot already lists: its exit animation is stalled because the tab is in the background. Apply the motion style from "Capture a settled page" and take a new snapshot. This is not a failing app.
+- A loader over an empty page, a blank area, or a framework error stays after one `preview_navigate` reload: the app is failing. Investigate it through the project's verification skill instead of waiting.
 - The call reports no automation host: call `preview_status`, reopen the tab with `preview_open` if it is gone, and repeat the step once. If the host is still missing, the CLI fallback applies.
+
+### Capture a settled page
+
+A background tab runs animations slowly, so a screenshot or a measurement taken there shows a dialog half faded, a loader that has already finished, or a position mid-transition. Before a screenshot or a measurement, stop motion in the tab with `preview_evaluate`:
+
+```js
+document.head.appendChild(Object.assign(document.createElement("style"), { textContent: "*{animation-duration:0s!important;animation-delay:0s!important;transition-duration:0s!important}" }))
+```
+
+The style is lost on navigation or reload; add it again. When the motion itself is under test, leave the style out and bring the tab to the front first with `preview_open({tabId, open: true})`.
 
 For screenshots, `preview_snapshot({save: true})` returns `screenshotPath`. For video, start `preview_recording_start`, perform the flow, and stop with `preview_recording_stop` on the same tab; retain its returned `path`.
 

@@ -5,6 +5,8 @@ description: The user hands off a task to be finished on your own, through to a 
 
 Take the user's task from its current state to an open PR ready for the user to merge, unless "When the task is an error" ends it without one. Do not stop to discuss the approach; ask only under the conditions in "Readiness and handoff". Installing or discussing the skill does not invoke it.
 
+This skill, the skills it loads, and the Sol reviewers' replies are in English. Every progress note and the final report still go to the user in the language their instructions set.
+
 ## Authorization and scope
 
 An explicit request authorizes completing the change, running the checks and browser or runtime verification it needs, committing, pushing, creating or updating the PR, rebasing, fixing conflicts, and using `--force-with-lease` on this task's branch after a rebase. Follow project verification commands and fixtures. Temporary checks stay outside the repository.
@@ -20,6 +22,8 @@ When the user sends only an error, such as a message, stack trace, log line, or 
 Open a PR only when a change in this repository removes the cause and is worth making. Count how often the error happens and whom it reaches before deciding. End without a PR when the error is expected behavior already shown clearly to the user, comes from an external service or the environment, is already fixed on the target branch or in an open PR. Then report the cause, the evidence that establishes it, why no change is worth making, and anything the user must do outside the repository.
 
 ## Complete and verify
+
+Before building something new to solve a problem, such as a job, table, cache, retry, or abstraction, measure the problem in production data or logs: how often it happens and whom it reaches. When the data shows it does not happen, end with that evidence instead of a PR, as "When the task is an error" does.
 
 Finish the user's goal with the smallest change that satisfies it. Verify every changed behavior with evidence observed in this session:
 

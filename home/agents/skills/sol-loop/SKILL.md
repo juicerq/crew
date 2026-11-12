@@ -15,6 +15,9 @@ that grows with volume.
 Make the most minimal possible changes to appease the Sol reviewers. Be careful
 of scope creep and don't be scared to push back.
 
+Reviewers reply in English. Notes to the user during the loop and the final
+report stay in the user's language.
+
 ## Budget
 
 - Default: 3 rounds total. Round 1 is full and finds everything it can.
@@ -24,6 +27,14 @@ of scope creep and don't be scared to push back.
   the user asks.
 - Stop early if a round returns only nits or follow-ups. Declined nits,
   follow-ups, and comment, doc, or format-only fixes need no new round.
+- A fix confined to test files needs no new round once the changed test
+  fails without the production change and passes with it. Record it as
+  `fixed, not re-reviewed`. A reviewer whose only open findings were fixed
+  this way counts as approving.
+- All loops on one PR share 6 rounds, and a loop after approval (step 5)
+  gets at most 2 of them. At 6, stop reviewing and tell the user the count
+  and which change no approval covers. More rounds need the user's
+  go-ahead.
 - Two reviewers per round, correctness and quality. Neither may start
   subagents or more reviewers.
 - Keep one ledger for both: id, reviewer, severity, outcome, usage if
@@ -169,7 +180,8 @@ review grew the diff, cut first. Do not agree just to end the loop.
 ## 4. Next round
 
 Start one only if budget remains and a blocker or should is open, behavior code
-changed, or approval does not cover the current behavior diff. Run both
+changed, or approval does not cover the current behavior diff. A test-only fix
+recorded under Budget is none of these. Run both
 reviewers, even one with no open ids, because a fix for one reviewer's finding
 can create a finding for the other. Use a fresh `delegate_task` for each. Send each its round 1 brief,
 the whole ledger (`fixed:` / `disagree:` / `declined:` / `follow-up:` + evidence), the same
@@ -205,7 +217,8 @@ Add `on <effort>` only if verified.
 The approval covers only the diff Sol reviewed. When behavior code changes
 after the loop ends, such as a follow-up request, a fix after approval, or a
 rebase conflict, review the change since approval in a new loop with both
-reviewers before the next push or merge. Send each its round 1 brief, the
+reviewers before the next push or merge, within the per-PR total under
+Budget. Send each its round 1 brief, the
 previous ledger, and the change since approval, scoped and worded as in step 4,
 except that correctness questions the design of the change since approval,
 then update the review line
