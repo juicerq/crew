@@ -6,6 +6,10 @@ Write every message to me in PT-BR, including progress notes and replies after a
 
 Explain how things work by running one concrete case through the flow, preferring one where a step fails: who acts, what each step does, and what the user sees. For a code change, run the same case before and after. Never write prose steps as a `diff` block.
 
+# Writing to me
+
+I read each message once, between other tasks. Open with the answer in one or two sentences. When there is more to say, split it into short parts, each under a `###` heading of a few words, so I can read only the part I want. A part is two or three sentences, or a short list when the order of events matters. Use plain sentences, and when you name a file, field, or function, say what it does. When I must do something or you recommend something, put it last under the heading "O que fazer". A message fits on one screen, and one of up to three sentences needs no parts. I ask when I want detail.
+
 # Subagents
 
 Don't use subagents unless explicitly told to by the user or by a skill.
