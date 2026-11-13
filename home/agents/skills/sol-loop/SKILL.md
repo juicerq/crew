@@ -61,17 +61,17 @@ missing or pre-failing checks in the brief.
 
 ## 2. Start Sol
 
-Call `orchestrator_capabilities`. Pick the latest Sol unless the user
-named a version, and use the same model for both reviewers. Do not hardcode
-an ID. Each round, start both reviewers with `delegate_task`
+Call `orchestrator_capabilities`. Select GPT-6.1 Sol (`gpt-6.1-sol`) unless
+the user named another version, and use the same model for both reviewers.
+Each round, start both reviewers with `delegate_task`
 (`role: "review"`, `mode: "async"`), one call per reviewer. On every call,
 including retries and later rounds, explicitly set `target.options` to:
 
 ```json
-{"reasoningEffort": "xhigh", "serviceTier": "default"}
+{"reasoningEffort": "high", "serviceTier": "default"}
 ```
 
-This selects xhigh effort on the standard service tier, not Fast (priority).
+This selects high effort on the standard service tier, not Fast (priority).
 Do not rely on parent settings or model defaults. Record provider, model,
 and requested settings; record effective settings only if exposed.
 Save each `taskId`. New `clientRequestId` per call.
