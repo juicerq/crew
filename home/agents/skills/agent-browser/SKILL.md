@@ -34,7 +34,17 @@ document.head.appendChild(Object.assign(document.createElement("style"), { textC
 
 The style is lost on navigation or reload; add it again. When the motion itself is under test, leave the style out and bring the tab to the front first with `preview_open({tabId, open: true})`.
 
+A screenshot of a background tab can also come out at a reduced resolution, blurred in every region, even with motion stopped. Inspect each screenshot before using it. When the text is blurred, bring the tab to the front with `preview_open({tabId, open: true})` and capture again.
+
 For screenshots, `preview_snapshot({save: true})` returns `screenshotPath`. For video, start `preview_recording_start`, perform the flow, and stop with `preview_recording_stop` on the same tab; retain its returned `path`.
+
+The preview records full-range H.264 (`yuvj420p`, `color_range=pc`). GitHub's player and most browsers read it as limited range, so light grays turn white: borders, inputs, and muted backgrounds disappear in light mode. Before you inspect, share, or attach a recording, convert it into a new file outside the repository and use only the converted file:
+
+```sh
+ffmpeg -i <path> -vf "scale=in_range=full:out_range=limited,format=yuv420p,setparams=range=tv:colorspace=bt709:color_primaries=bt709:color_trc=bt709" -c:v libx264 -preset slow -crf 18 -movflags +faststart -an <out>.mp4
+```
+
+The conversion is done when `ffprobe -v error -select_streams v:0 -show_entries stream=pix_fmt,color_range,color_transfer <out>.mp4` reports `yuv420p`, `tv`, and `bt709`.
 
 Follow the host's recovery rules for failed preview calls. A failure that different arguments would fix never justifies the CLI. The screenshot and recording paths are local evidence; use [pr's media procedure](../pr/SKILL.md#media) when an authorized PR needs them.
 
