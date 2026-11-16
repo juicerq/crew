@@ -5,7 +5,7 @@ description: Prepare, create, or update an authorized pull request with a descri
 
 Write for a reviewer who has not followed the conversation. Ground claims, examples, and media in observed evidence. Read the final diff and relevant implementation, then explain the problem and resulting behavior in the repository's language. Rewrite an existing description around the current change when its scope changes.
 
-Use the template below, translating headings and labels into the body's language. Keep **Why the change** and **Change outline**. Omit empty links and media sections. Verification belongs in CI or the handoff: the body has no validation section, test counts, commands, logs, environment setup, or review history. The one exception is the review line that [sol-loop](../sol-loop/SKILL.md) adds when it pushes.
+Use the template below, translating headings and labels into the body's language. Keep **Why the change** and **Change outline**. Omit empty links and media sections. Verification belongs in CI or the handoff: the body has no validation section, test counts, commands, logs, environment setup, or review history. The exceptions are the review line that [sol-loop](../sol-loop/SKILL.md) adds when it pushes and the review section that [council](../council/SKILL.md) adds.
 
 ## Description template
 

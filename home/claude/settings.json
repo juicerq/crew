@@ -40,6 +40,7 @@
     "init": "off",
     "security-review": "off",
     "agent-browser": "on",
+    "council": "on",
     "domain-modeling": "on",
     "frontend-design": "on",
     "improve-codebase-architecture": "on",

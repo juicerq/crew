@@ -68,10 +68,10 @@ Each round, start both reviewers with `delegate_task`
 including retries and later rounds, explicitly set `target.options` to:
 
 ```json
-{"reasoningEffort": "high", "serviceTier": "default"}
+{"reasoningEffort": "xhigh", "serviceTier": "default"}
 ```
 
-This selects high effort on the standard service tier, not Fast (priority).
+This selects xhigh effort on the standard service tier, not Fast (priority).
 Do not rely on parent settings or model defaults. Record provider, model,
 and requested settings; record effective settings only if exposed.
 Save each `taskId`. New `clientRequestId` per call.
@@ -79,8 +79,11 @@ Save each `taskId`. New `clientRequestId` per call.
 `t3_thread_send`, `create_threads`, or `t3_thread_launch` for review.
 
 If T3 tools are not listed, try one direct capability call. If no route
-runs Sol with both settings, report the blocker. Do not substitute a model
-or silently change the effort or service tier.
+runs Sol with both settings, run both reviewers on Claude Opus 5.5
+(`claude-opus-5-5`) with `target.options` set to `{"effort": "xhigh"}`, and
+tell the user Sol was unavailable and why. If Opus is unavailable too, report
+the blocker. Do not use any other model or silently change the effort or
+service tier.
 
 Do not edit scoped files while review runs. Wait for both notices. Do not
 poll or start reviewers beyond the two. Each turn you end to wait is a
