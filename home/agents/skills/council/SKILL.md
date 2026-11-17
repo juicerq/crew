@@ -14,7 +14,7 @@ Bring in two delegates to help with the user's request, usually for review
 or feedback. If the user's instructions name council members, use those.
 Otherwise use these two, each at xhigh effort:
 
-- GPT Sol: `gpt-6.1-sol` on Codex, `target.options`
+- GPT Sol: `gpt-6.2-sol` on Codex, `target.options`
   `{"reasoningEffort": "xhigh", "serviceTier": "default"}`.
 - Claude Opus: `claude-opus-5-5` on Claude, `target.options`
   `{"effort": "xhigh"}`.

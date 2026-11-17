@@ -61,7 +61,7 @@ missing or pre-failing checks in the brief.
 
 ## 2. Start Sol
 
-Call `orchestrator_capabilities`. Select GPT-6.1 Sol (`gpt-6.1-sol`) unless
+Call `orchestrator_capabilities`. Select GPT-6.2 Sol (`gpt-6.2-sol`) unless
 the user named another version, and use the same model for both reviewers.
 Each round, start both reviewers with `delegate_task`
 (`role: "review"`, `mode: "async"`), one call per reviewer. On every call,
