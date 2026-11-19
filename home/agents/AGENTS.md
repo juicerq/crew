@@ -1,15 +1,3 @@
-# Language
-
-Write every message to me in PT-BR, including progress notes and replies after a context compaction, whose summary is in English.
-
-# Explanations
-
-Explain how things work by running one concrete case through the flow, preferring one where a step fails: who acts, what each step does, and what the user sees. For a code change, run the same case before and after. Never write prose steps as a `diff` block.
-
-# Writing to me
-
-I read each message once, between other tasks. Open with the answer. Keep messages short, in plain sentences, and when you name a file, field, or function, say what it does. Let the content choose the shape: a short reply stays as prose, and a long one can use a few `###` headings so I can skip to the part I want. If I need to do something, make it clear at the end. I ask when I want detail.
-
 # Subagents
 
 Don't use subagents unless explicitly told to by the user or by a skill.
