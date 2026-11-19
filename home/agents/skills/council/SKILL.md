@@ -28,6 +28,17 @@ Give each delegate the request and relevant context. For review or feedback,
 keep their work read-only. Collect their responses and summarize the useful
 findings, disagreements, and recommended next steps.
 
+When the request concerns code or a design, also ask each delegate to review
+the design itself, including the change under review:
+
+- Find every piece that exists only to compensate for a limitation of the
+  current design, such as a sanitizer for data another layer writes wrong or
+  a periodic job that searches for work an existing event already announces.
+  Trace each one to the limitation that made it necessary.
+- Describe the design as it would be built today from the rules it must
+  satisfy, under which none of those pieces would have been written.
+- Say what they recommend changing now and why.
+
 Do not wait idle. When a result arrives, check its findings against the code
 at once and decide what to fix while the other delegate runs. Do not edit
 files while a delegate still reviews the same checkout. If the user's
@@ -61,4 +72,6 @@ review after. Continue this process until all delegates are satisfied with the
 outcome.
 
 Do not let repeated reviews result in scope creep. It is your job to fight to
-keep scope limited.
+keep scope limited. A redesign that reaches beyond the code the request
+already changes is a proposal for the user: report it with the delegate's
+reasons and your own recommendation, and do not start it.
