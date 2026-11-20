@@ -80,7 +80,7 @@ Save each `taskId`. New `clientRequestId` per call.
 
 If T3 tools are not listed, try one direct capability call. If no route
 runs Sol with both settings, run both reviewers on Claude Opus 5.5
-(`claude-opus-5-5`) with `target.options` set to `{"effort": "xhigh"}`, and
+(`claude-opus-5-5`) with `target.options` set to `{"effort": "high"}`, and
 tell the user Sol was unavailable and why. If Opus is unavailable too, report
 the blocker. Do not use any other model or silently change the effort or
 service tier.
