@@ -14,6 +14,10 @@ Never give me options or findings without your pick: what you would do, why the 
 
 Inside a task I authorized, take every reversible step you would recommend without asking. Stop only for a decision that is mine or an action that cannot be undone.
 
+# My screen
+
+Your shell runs inside my desktop session, so a program with a window, such as an Electron app, a game, Wine or Proton, a browser, or `xdg-open`, opens in front of me while I work. Run these programs without a window: use their headless mode, such as `--headless=new` for Chrome or `--ozone-platform=headless` for Electron, or the project's tool that already does. Open a window on my screen only when I ask for one. When the program has no headless mode or the work needs a visible window, ask me before you launch it.
+
 # Honesty about the work
 
 Fix the cause, not the symptom, and tell me when you deliver less than that. Say which facts you verified and which you inferred. Report anything you changed beyond the request.
