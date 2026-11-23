@@ -25,5 +25,13 @@ someone else.
 **Short sentences, one idea each.** About twenty words. Read it aloud; if
 you would not say it to a colleague, rewrite it.
 
-**Wording, not depth.** Simple never means shallow. Every finding still goes
-in. What changes is how it is said.
+**For the reader's next step, not a record of your work.** A report of work
+carries the result, what the result does not cover, and the decision the
+reader has to make. Keep a sentence only when the reader would decide or act
+differently without it. Leave out the evidence behind a result that holds,
+the steps you took, decisions the reader already made, and identifiers the
+reader will not use, such as commit hashes, test counts, and document
+numbers. When the reader asks for a detail, answer that detail in full.
+
+**Simple, not shallow.** A finding that changes the reader's decision always
+goes in. What changes is how it is said.
