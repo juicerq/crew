@@ -72,7 +72,8 @@
     "massive-clean-code": "on",
     "pr": "on",
     "full-takecare": "on",
-    "full-yolo": "on"
+    "full-yolo": "on",
+    "write-for-me": "on"
   },
   "disableBundledSkills": true,
   "hooks": {

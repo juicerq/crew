@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write For Me"
+  short_description: "Write a message for you to send in your own voice"
+  default_prompt: "Use $write-for-me to write the message I will send."
