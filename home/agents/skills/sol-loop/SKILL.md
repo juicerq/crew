@@ -99,6 +99,7 @@ absolute path for the quality brief. Both briefs start with the same header:
 
 ```
 Review only. Do not edit, commit, push, comment on PRs, or start subagents.
+Remove temporary directories with `find "$tmp" -delete`, never `rm -f`/`rm -rf`.
 Repo: <abs path> Base: <sha> Intent: <intent> Out of scope: <scope> Checks: <results>
 See: git diff <base> [-- <paths>]; git status --short (read untracked).
 ```
