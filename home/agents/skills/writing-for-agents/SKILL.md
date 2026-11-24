@@ -17,7 +17,7 @@ Give the reason when it helps the reader choose in a new case. "Keep output outs
 
 ## Put each decision with its owner
 
-Keep each rule in one authoritative place. Other documents identify when to load it. Coding conventions belong in the project's `code-practices` skill; a review instruction points there when judging code. A project command belongs in the project's skill.
+Keep each rule in one authoritative place. Other documents identify when to load it. Coding conventions belong in the project's `code-practices` skill, or in its `CODE_STANDARDS.md` when the project keeps them there; a review instruction points there when judging code. A project command belongs in the project's skill.
 
 Keep the common path in the main file. Put specialized procedures behind references whose links state when to read them. Preserve hard-won facts, contracts, and reasons the agent cannot recover cheaply from the environment.
 

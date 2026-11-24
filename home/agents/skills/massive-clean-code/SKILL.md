@@ -4,7 +4,7 @@ description: Sweep a codebase for unreadable code and clean every finding withou
 disable-model-invocation: true
 ---
 
-Find code that is harder to read than its behavior requires and clean it without changing behavior. Invoking this skill authorizes the cleanup and its PR; present no catalog and wait for no selection. Judge code against the project's `code-practices` skill, when it has one, and the project's own instructions; this skill owns the sweep, not the conventions.
+Find code that is harder to read than its behavior requires and clean it without changing behavior. Invoking this skill authorizes the cleanup and its PR; present no catalog and wait for no selection. Judge code against the project's code conventions, its `code-practices` skill or `CODE_STANDARDS.md` when it has one, and the project's own instructions; this skill owns the sweep, not the conventions.
 
 Cover the path the user names, defaulting to the whole repository. Read the project's `AGENTS.md`, linter configuration, and existing lint plugins first, so findings exclude what a configured rule already rejects.
 
@@ -41,7 +41,7 @@ Before adding a rule, probe it with valid and invalid cases, including parenthes
 
 Skip a rule that rewards artificial extraction. A cognitive-complexity limit, for example, measures nesting, not how readable a decision is, and agents meet it by moving branches into helpers.
 
-Patterns that need judgment, such as duplicated flows and derived state, cannot become a rule. Include proposed wording for the project's `code-practices` skill or its `AGENTS.md` in the final report; changing those files needs the user's approval.
+Patterns that need judgment, such as duplicated flows and derived state, cannot become a rule. Include proposed wording for the project's code conventions or its `AGENTS.md` in the final report; changing those files needs the user's approval.
 
 ## Verify behavior before handing off
 

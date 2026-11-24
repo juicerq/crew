@@ -33,7 +33,7 @@ For a proposed prevention, identify the real past mistake it would reject and wh
 
 ## Keep instruction ownership intact
 
-Coding conventions belong in the project's `code-practices` skill, which applies during implementation and review. Do not introduce a separate `CODING_STANDARDS.md`.
+Coding conventions belong in the project's `code-practices` skill or, when the project keeps them there, its `CODE_STANDARDS.md`; either applies during implementation and review. Add to the one the project already has and do not start the other beside it.
 
 Put project knowledge in the project's `AGENTS.md` or an existing project skill. Keep project instructions in `AGENTS.md`, without a competing `CLAUDE.md`. Use this setup's `home/agents/AGENTS.md` only for shared preferences that hold for both Claude Code and Codex; the installer links it as `~/.codex/AGENTS.md`, `~/.agents/AGENTS.md`, and `~/.claude/CLAUDE.md`.
 

@@ -4,7 +4,7 @@ description: Find deepening opportunities in a codebase, compare them in an HTML
 disable-model-invocation: true
 ---
 
-Find refactors that gather a scattered responsibility behind a smaller interface. Use the project's `code-practices` skill, when it has one, for depth and the deletion test, and use the project's product vocabulary to name the responsibilities. The result is a set of candidates and an interface design for the user's choice, rather than an automatic implementation.
+Find refactors that gather a scattered responsibility behind a smaller interface. Use the project's code conventions, its `code-practices` skill or `CODE_STANDARDS.md` when it has one, for depth and the deletion test, and use the project's product vocabulary to name the responsibilities. The result is a set of candidates and an interface design for the user's choice, rather than an automatic implementation.
 
 ## Find the friction worth changing
 
@@ -30,6 +30,6 @@ Stop at candidates here. Ask which one the user wants to explore, in their langu
 
 ## Design the selected boundary
 
-After the user chooses, follow the project's `code-practices` skill, when it has one, to work out the caller, interface, owners, dependencies, and relevant cases. Identify the existing behavior and checks the proposed boundary must preserve. Resolve unclear product concepts with [domain-modeling](../domain-modeling/SKILL.md).
+After the user chooses, follow the project's code conventions, when it has them, to work out the caller, interface, owners, dependencies, and relevant cases. Identify the existing behavior and checks the proposed boundary must preserve. Resolve unclear product concepts with [domain-modeling](../domain-modeling/SKILL.md).
 
 Finish when the selected candidate has a concrete interface design and verification approach. Applying the refactor remains a separate implementation request.

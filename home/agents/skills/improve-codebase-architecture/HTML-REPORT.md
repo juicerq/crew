@@ -1,6 +1,6 @@
 # Show architectural candidates inline
 
-Use this reference when building the candidate report in [SKILL.md](SKILL.md). Make the before/after diagrams carry the architectural comparison, with enough evidence for the user to choose a candidate. Use the terms of the project's `code-practices` skill, when it has one, and the project's product names.
+Use this reference when building the candidate report in [SKILL.md](SKILL.md). Make the before/after diagrams carry the architectural comparison, with enough evidence for the user to choose a candidate. Use the terms of the project's code conventions (its `code-practices` skill or `CODE_STANDARDS.md`), when it has them, and the project's product names.
 
 ## Build one document
 

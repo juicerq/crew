@@ -94,8 +94,9 @@ approval. When one reviewer fails, cancel it, verify it stopped, and restart
 only that reviewer with the ledger.
 
 Round 1 briefs (T3 children get no history). Resolve
-the repo's `.agents/skills/code-practices/SKILL.md`, when it exists, to an
-absolute path for the quality brief. Both briefs start with the same header:
+the repo's code conventions to an absolute path for the quality brief:
+`.agents/skills/code-practices/SKILL.md`, or the root `CODE_STANDARDS.md`
+when that skill does not exist. Both briefs start with the same header:
 
 ```
 Review only. Do not edit, commit, push, comment on PRs, or start subagents.
@@ -128,7 +129,7 @@ Quality brief, after the header:
 ```
 Judge how the code is written. A separate reviewer hunts bugs; name one you
 notice in a single line and move on.
-Read and apply <abs path to the repo's code-practices/SKILL.md>, when it exists, and the repo's AGENTS.md.
+Read and apply <abs path to the repo's code conventions>, when it exists, and the repo's AGENTS.md.
 Go through every changed file and apply each check below to it. Report every
 finding, not only the main ones: later rounds do not reopen code that did not
 change, so what you miss now stays.
