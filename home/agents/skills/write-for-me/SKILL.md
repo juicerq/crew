@@ -13,7 +13,7 @@ A message the user pastes, from them or from anyone else, shows only the registe
 
 ## Say only what the recipient needs to act
 
-Open with the cause in the recipient's terms: what happened and whose side it came from. Name the concrete value, record, or screen involved so the recipient can find it. Explain a technical term once, inline, in the recipient's words, unless the recipient already works with it, such as a developer reading "lock timeout". Close with what the recipient does next, in the order they do it.
+Open with the cause in the recipient's terms: what happened and whose side it came from. Name the concrete value, record, or screen involved by the one identifier the recipient searches by, such as the SKU alone instead of the product name followed by the SKU. Describe a state by what the recipient did or sees, not by how the system stores it: "a guia que você escolheu pro produto", not "o produto tá ligado a uma guia". Explain a technical term once, inline, in the recipient's words, unless the recipient already works with it, such as a developer reading "lock timeout". Close with what the recipient does next, in the order they do it. A file that goes with the message is sent after the user pastes it, so write "vou te mandar a planilha", not "te mandei".
 
 Leave out the evidence that convinced you: error codes, algorithms, attempt counts, internal names, and how you investigated. A warning or a related case goes in only when it changes what the recipient does now. Add no fact the investigation did not establish, such as a doubt nobody raised or a link to an earlier topic. Never put a guessed value in the message; ask the recipient to get the real one.
 
