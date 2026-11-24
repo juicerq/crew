@@ -37,7 +37,9 @@ Use the template below, translating headings and labels into the body's language
 
 Repeat the change subsection for independently understandable changes. A small diff needs only a short context paragraph, the view, a short example, and at most one more sentence. Each block adds information; cut sentences that repeat the context, view, or example. Describe unchanged behavior only when a reviewer could reasonably suspect it changed.
 
-Choose the view that makes the change visible. Use a `diff` fence for an existing shape, or show the complete shape when it is mostly new. Keep each before/after pair in its own block. For a deletion, context alone may suffice. For user or processing flows, show short previous and new paths, using product terms for interactions and key stages for processing.
+Choose the view that makes the change visible. Use a `diff` fence for an existing shape, or show the complete shape when it is mostly new. Keep each before/after pair in its own block.
+
+A fence does not reflow its text. A line wider than the reader's panel, such as the T3 side panel or a phone, breaks mid-word and wrecks any alignment. Keep every fenced line under about 45 characters. Show a folder layout as a narrow tree fence (`├──`, `└──`) with at most a few words after each name, such as `├── sim/   regras do encontro`. Put longer explanations, like what each folder may import, in a table after the tree, never on the tree lines. For a deletion, context alone may suffice. For user or processing flows, show short previous and new paths, using product terms for interactions and key stages for processing.
 
 Write examples in second person with short sentences and concrete amounts, dates, or times in bold. Use a blockquote starting with **Example:** or **Exemplo:**. For a bug, include what happens today before the fix.
 
