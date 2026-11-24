@@ -11,7 +11,7 @@ When the options are text read as text, such as a name or an approach, list them
 
 Read the current screen, scene, or component before drawing anything, and follow [frontend-design](../frontend-design/SKILL.md) for interface options.
 
-- Follow the requested count; show three when none was given.
+- Follow the requested count; show five when none was given.
 - Make each option one you would ship, and make the options differ in idea: another structure, hierarchy, or mechanism. The same card in a second color is not an option. In a refinement round, such as "outras opções do 4", narrow variations are the request. When fewer options hold up than the count asked for, show those and say so.
 - When something exists today, show it as the first block, labeled as the current state.
 - Label each option with a key and a short name, such as `A. Selo no cabeçalho`. A label never changes in the thread, because the user answers with it: "estou entre 3 e 4A". A later round shows the options the user still considers under the same labels beside the new ones, and variations of 4 become 4A and 4B.
