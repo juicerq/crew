@@ -1,0 +1,4 @@
+interface:
+  display_name: "Show Options"
+  short_description: "Show options in the chat for you to choose by looking"
+  default_prompt: "Use $show-options to show me the options before I choose."

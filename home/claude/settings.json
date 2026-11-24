@@ -73,7 +73,8 @@
     "pr": "on",
     "full-takecare": "on",
     "full-yolo": "on",
-    "write-for-me": "on"
+    "write-for-me": "on",
+    "show-options": "on"
   },
   "disableBundledSkills": true,
   "hooks": {
