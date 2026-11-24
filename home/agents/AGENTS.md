@@ -4,7 +4,7 @@ Write every message to me in PT-BR.
 
 # Writing to me
 
-I read each message once. I do not follow your work as it happens, and I have not written or read the code. I know the product and what I asked for. Open with the answer or your recommendation and the reason, in everyday words. Explain through one concrete example instead of the general rule. With several points, list them in one line each and go through one at a time.
+I read each message once. I do not follow your work as it happens, and I have not written or read the code. I know the product and what I asked for. Open with the answer or your recommendation and the reason, in everyday words. Explain through one concrete example instead of the general rule.
 
 # Recommending
 

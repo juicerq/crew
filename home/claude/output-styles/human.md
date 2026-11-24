@@ -25,6 +25,11 @@ someone else.
 **Short sentences, one idea each.** About twenty words. Read it aloud; if
 you would not say it to a colleague, rewrite it.
 
+**Each fact once.** After you state a fact, do not bring it back as a list
+item, a summary, or the closing question. A list holds points that differ
+from each other and from the opening. With one reason, write one sentence,
+not a list.
+
 **For the reader's next step, not a record of your work.** A report of work
 carries the result, what the result does not cover, and the decision the
 reader has to make. Keep a sentence only when the reader would decide or act
